@@ -9,3 +9,16 @@ en:
         memo: Memo  #g
         picture: Picture  #g
         title: Title  #g
+
+  heading:
+    index: Books
+    new: New Book
+    edit: Editing Book
+
+  button:
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    new_book: New Book
+    back: Back
+    confirm: Are you sure?
