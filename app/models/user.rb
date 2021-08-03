@@ -7,11 +7,6 @@ class User < ApplicationRecord
   validate :image_type
 
   def image_type
-    if image.attached?
-      unless image.blob.content_type.in?(%(image/jpeg image/png image/gif))
-        errors.add(:image, 'はjpeg・png・gif形式のいずれかでアップロードしてください')
-      end
-    end
+    errors.add(:image, 'はjpeg・png・gif形式のいずれかでアップロードしてください') if image.attached? && !image.blob.content_type.in?(%(image/jpeg image/png image/gif))
   end
-
 end
