@@ -1,0 +1,6 @@
+<h2>フォロー一覧</h2>
+
+<% @users.each do |user| %>
+  <strong><%= User.human_attribute_name(:name) %>:</strong>
+  <%= link_to user.name, user_path(user.id) %>
+<% end %>
