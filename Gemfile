@@ -36,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry-byebug'
   gem 'faker'
   gem 'i18n_generators'
   gem 'letter_opener_web'
