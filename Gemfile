@@ -36,11 +36,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pry-byebug'
   gem 'faker'
   gem 'i18n_generators'
   gem 'letter_opener_web'
   gem 'listen', '~> 3.3'
+  gem 'pry-byebug'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
