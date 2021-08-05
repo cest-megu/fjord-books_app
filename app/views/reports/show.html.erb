@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong><%= Report.human_attribute_name(:title) %>:</strong>
   <%= @report.title %>
@@ -10,5 +8,7 @@
   <%= @report.content %>
 </p>
 
-<%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<% if @report.ensure_user?(current_user) %>
+  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<% end %>
 <%= link_to t('views.common.back'), reports_path %>

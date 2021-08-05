@@ -45,6 +45,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
+  gem 'pry-byebug'
 end
 
 group :test do
