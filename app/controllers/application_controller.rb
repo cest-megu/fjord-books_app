@@ -12,4 +12,15 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:address])
     devise_parameter_sanitizer.permit(:account_update, keys: [:self_introduce])
   end
+
+  private
+
+  def after_sign_in_path_for(resource)
+    books_path
+  end
+
+  def after_sign_out_path_for(resource)
+    user_session_path
+  end
+
 end
