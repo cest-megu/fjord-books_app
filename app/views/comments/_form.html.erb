@@ -1,0 +1,6 @@
+<%= form_with model: [commentable, commentable.comments.new] method: :post do |f| %>
+  <%= f.text_area :content %>
+  <div class="actions">
+    <%= f.submit "コメントをする", class: 'btn btn-warning px-5' %>
+  </div>
+<% end %>

@@ -8,6 +8,8 @@
   <%= @report.content %>
 </p>
 
+<%= render 'comments/form', commentable: @report, comment: @comments %>
+
 <% if @report.ensure_user?(current_user) %>
   <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <% end %>
