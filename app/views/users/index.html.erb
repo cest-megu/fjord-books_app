@@ -18,6 +18,7 @@
         <td><%= user.name %></td>
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
+        <td><%= image_tag user.image.variant(resize: "100x100") if user.image.attached?%></td>
         <td><%= link_to t('views.common.show'), user %></td>
       </tr>
     <% end %>
