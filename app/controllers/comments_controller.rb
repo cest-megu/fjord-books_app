@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
@@ -15,11 +17,9 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def show
-  end
+  def show; end
 
   def update
     if @comment.update(comment_params)
@@ -35,8 +35,8 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:content)
   end
-
 end

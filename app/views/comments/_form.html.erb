@@ -7,8 +7,6 @@
         <%= link_to comment.user.name_or_email, comment.user %>
         (<%= l comment.created_at, format: :short %>)
       </small>
-      <%= link_to t('views.common.edit'), edit_book_comment_path(comment) %> |
-      <%= link_to t('views.common.destroy'), comment.content, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
     </li>
   <% end %>
 <% else %>
