@@ -21,5 +21,6 @@ ja:
       report:
         title: 題名
         content: 内容
+        created_day: 投稿日
       comment:
         content: 内容
