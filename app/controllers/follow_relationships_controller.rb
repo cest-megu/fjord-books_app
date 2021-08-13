@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RelationshipsController < ApplicationController
+class FollowRelationshipsController < ApplicationController
   before_action :set_user
 
   def create
@@ -26,6 +26,6 @@ class RelationshipsController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:relationship][:follow_id])
+    @user = User.find(params[:follow_relationship][:follow_id])
   end
 end
