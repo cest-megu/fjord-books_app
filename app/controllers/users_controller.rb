@@ -7,5 +7,17 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @follow_relationship = current_user.follow_relationships.find_by(follow_id: @user.id)
+    @set_follow_relationship = current_user.follow_relationships.new
+  end
+
+  def followings
+    @user = User.find(params[:id])
+    @users = @user.followings.all
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers.all
   end
 end
