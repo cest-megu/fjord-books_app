@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to [@commentable, @comment], notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+      redirect_to [@commentable, @comment], notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private

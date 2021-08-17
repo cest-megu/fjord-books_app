@@ -8,7 +8,7 @@
         (<%= l comment.created_at, format: :short %>)
       </small>
       <%= link_to t('views.common.edit'), polymorphic_url([:edit, commentable, comment]) %>
-      <%= link_to t('views.common.destroy'), commentable.comments.destroy, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+      <%= link_to t('views.common.destroy'), polymorphic_url([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
     </li>
   <% end %>
 <% else %>
