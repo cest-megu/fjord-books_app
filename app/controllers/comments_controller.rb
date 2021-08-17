@@ -10,11 +10,8 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
-    if @comment.save
+    @comment.save
       redirect_to [@commentable, @comments], notice: t('controllers.common.notice_create', name: Comment.model_name.human)
-    else
-      render :new
-    end
   end
 
   def edit; end
@@ -22,11 +19,8 @@ class CommentsController < ApplicationController
   def show; end
 
   def update
-    if @comment.update(comment_params)
+    @comment.update(comment_params)
       redirect_to [@commentable, @comment], notice: t('controllers.common.notice_update', name: Comment.model_name.human)
-    else
-      render :edit
-    end
   end
 
   def destroy
