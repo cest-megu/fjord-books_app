@@ -8,6 +8,7 @@
   <%= @report.content %>
 </p>
 
+<%= render 'comments/content', commentable: @report %>
 <%= render 'comments/form', commentable: @report %>
 
 <% if @report.ensure_user?(current_user) %>

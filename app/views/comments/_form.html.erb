@@ -1,17 +1,3 @@
-<strong><%= Comment.model_name.human %>:</strong>
-<% if commentable.comments.present? %>
-  <% commentable.comments.order(:id).includes(:user).each do |comment| %>
-    <li>
-      <%= comment.content %> :
-      <small>
-        <%= link_to comment.user.name_or_email, comment.user %>
-        (<%= l comment.created_at, format: :short %>)
-      </small>
-    </li>
-  <% end %>
-<% else %>
-<p>まだコメントがありません</p>
-<% end %>
 <%= form_with model: [commentable, commentable.comments.new] do |f| %>
   <%= f.text_area :content %>
   <div class="actions">
