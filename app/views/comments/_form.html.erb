@@ -1,4 +1,9 @@
 <%= form_with model: [commentable, commentable.comments.new] do |f| %>
+  <% if commentable.comments.new.content == nil %>
+    <ul>
+      コメント<%= I18n.t("errors.messages.blank") %>
+    </ul>
+  <% end %>
   <%= f.text_area :content %>
   <div class="actions">
     <%= f.submit "#{Comment.human_attribute_name(:content_new)}", class: 'btn btn-warning px-5' %>
