@@ -1,6 +1,6 @@
-<%= form_with model: [@commentable, @commentable.comments.update] do |f| %>
+<%= form_with model: [@commentable, @comment] do |f| %>
   <%= f.text_area :content %>
   <div class=“actions”>
-    <%= f.submit "コメントの更新", class: 'btn btn-warning px-5' %>
+    <%= f.submit "#{Comment.human_attribute_name(:content_update)}", class: 'btn btn-warning px-5' %>
   </div>
 <% end %>
