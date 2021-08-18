@@ -11,8 +11,11 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
-    @comment.save
+    if @comment.save
       redirect_to [@commentable, @comments], notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+    else
+      redirect_to polymorphic_url(@commentable)
+    end
   end
 
   def edit; end
@@ -20,8 +23,11 @@ class CommentsController < ApplicationController
   def show; end
 
   def update
-    @comment.update(comment_params)
+    if @comment.update(comment_params)
       redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
+    else
+     render :edit
+    end
   end
 
   def destroy
