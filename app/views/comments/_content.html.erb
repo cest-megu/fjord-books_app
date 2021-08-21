@@ -12,5 +12,5 @@
     </li>
   <% end %>
 <% else %>
-<p><%= Comment.human_attribute_name(:message_no_inclusion) %></p>
+<p><%= Comment.model_name.human %><%= I18n.t("errors.messages.inclusion") %></p>
 <% end %>

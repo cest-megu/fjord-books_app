@@ -24,6 +24,5 @@ ja:
         created_day: 投稿日
       comment:
         content: 内容
-        message_no_inclusion: コメントはまだありません
         content_update: コメントの更新
         content_new: コメントをする
