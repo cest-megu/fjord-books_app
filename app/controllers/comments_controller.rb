@@ -14,7 +14,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to [@commentable, @comments], notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      redirect_to polymorphic_url(@commentable)
+      flash.now[:alert] = "#{Comment.model_name.human}#{t('errors.messages.blank')}"
+      render '@commentable/show'
     end
   end
 
@@ -26,6 +27,7 @@ class CommentsController < ApplicationController
     if @comment.update(comment_params)
       redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
     else
+      flash.now[:alert] = "#{Comment.model_name.human}#{t('errors.messages.blank')}"
       render :edit
     end
   end

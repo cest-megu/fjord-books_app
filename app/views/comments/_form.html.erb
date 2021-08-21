@@ -1,6 +1,6 @@
 <%= form_with model: [commentable, commentable.comments.new] do |f| %>
   <%= f.text_area :content %>
   <div class="actions">
-    <%= f.submit "#{Comment.model_name.human}#{I18n.t("helpers.submit.create")}", class: 'btn btn-warning px-5' %>
+    <%= f.submit "#{t('views.common.title_new', name: Comment.model_name.human)}", class: 'btn btn-warning px-5' %>
   </div>
 <% end %>
