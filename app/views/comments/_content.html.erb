@@ -1,0 +1,16 @@
+<strong><%= Comment.model_name.human %>:</strong>
+<% if commentable.comments.present? %>
+  <% commentable.comments.order(:id).includes(:user).each do |comment| %>
+    <li>
+      <%= comment.content %> :
+      <small>
+        <%= link_to comment.user.name_or_email, comment.user %>
+        (<%= l comment.created_at, format: :short %>)
+      </small>
+      <%= link_to t('views.common.edit'), polymorphic_url([:edit, commentable, comment]) %>
+      <%= link_to t('views.common.destroy'),[commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+    </li>
+  <% end %>
+<% else %>
+<p><%= Comment.model_name.human %><%= I18n.t("errors.messages.inclusion") %></p>
+<% end %>
