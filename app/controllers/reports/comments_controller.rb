@@ -7,5 +7,7 @@ class Reports::CommentsController < CommentsController
 
   def set_commentable
     @commentable = Report.find(params[:report_id])
+    @report = @commentable
+    @show_template = 'reports/show'
   end
 end

@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
       redirect_to [@commentable, @comments], notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       flash.now[:alert] = "#{Comment.model_name.human}#{t('errors.messages.blank')}"
-      render '@commentable/show'
+      render @show_template
     end
   end
 

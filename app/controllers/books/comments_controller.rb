@@ -7,5 +7,7 @@ class Books::CommentsController < CommentsController
 
   def set_commentable
     @commentable = Book.find(params[:book_id])
+    @book = @commentable
+    @show_template = 'books/show'
   end
 end
