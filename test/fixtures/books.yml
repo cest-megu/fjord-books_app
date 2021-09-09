@@ -1,9 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  memo: MyText
-
-two:
-  title: MyString
-  memo: MyText
+harry_potter:
+  title: ハリーポッターと賢者の石
+  memo: 魔法の世界
+  author: J・K・ローリング
